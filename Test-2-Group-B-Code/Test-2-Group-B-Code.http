@@ -1,0 +1,6 @@
+@Test_2_Group_B_Code_HostAddress = http://localhost:5091
+
+GET {{Test_2_Group_B_Code_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
