@@ -1,4 +1,4 @@
-namespace LibraryApp.Entities;
+namespace Test_2_Group_B_Code.Entities;
 
 public class Book
 {
