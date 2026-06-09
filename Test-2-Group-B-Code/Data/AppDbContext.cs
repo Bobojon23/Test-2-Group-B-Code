@@ -43,5 +43,20 @@ public class AppDbContext : DbContext
             .HasOne(r => r.Book)
             .WithMany(b => b.Reviews)
             .HasForeignKey(r => r.BookId);
+        
+        modelBuilder.Entity<Author>().HasData(
+            new Author { AuthorId = 1, FirstName = "Adam", LastName = "Mickiewicz", Country = "Poland", BirthYear = 1798 },
+            new Author { AuthorId = 2, FirstName = "Jane", LastName = "Austen", Country = "United Kingdom", BirthYear = 1775 },
+            new Author { AuthorId = 3, FirstName = "Gabriel", LastName = "Garcia Marquez", Country = "Colombia", BirthYear = 1927 },
+            new Author { AuthorId = 4, FirstName = "Haruki", LastName = "Murakami", Country = "Japan", BirthYear = 1949 }
+        );
+        
+        modelBuilder.Entity<Book>().HasData(
+            new Book { BookId = 1, Title = "Pan Tadeusz", ISBN = "9781234567890", PublishedYear = 1834, AuthorId = 1 },
+            new Book { BookId = 2, Title = "Pride and Prejudice", ISBN = "9789876543210", PublishedYear = 1813, AuthorId = 2 },
+            new Book { BookId = 3, Title = "One Hundred Years of Solitude", ISBN = "9781122334455", PublishedYear = 1967, AuthorId = 3 },
+            new Book { BookId = 4, Title = "Norwegian Wood", ISBN = "9785566778899", PublishedYear = 1987, AuthorId = 4 },
+            new Book { BookId = 5, Title = "Sense and Sensibility", ISBN = "9783344556677", PublishedYear = 1811, AuthorId = 2 }
+        );
     }
 }
